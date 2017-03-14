@@ -47,6 +47,7 @@ public static class KELua
 #else
         string realpath = Path.Combine(Application.dataPath, "LuaScripts");
         realpath = Path.Combine(realpath, path);
+        realpath = realpath.Replace(".", "/");
         realpath += ".lua.txt";
         string data = File.ReadAllText(realpath);
         return Encoding.UTF8.GetBytes(data);
