@@ -158,6 +158,16 @@ namespace XLua
 			    return new UnityEngine.Events.UnityAction(SystemVoid);
 			}
 		
+		    if (type == typeof(MickeyUtils.MEvent.EventFunc))
+			{
+			    return new MickeyUtils.MEvent.EventFunc(SystemVoid);
+			}
+		
+		    if (type == typeof(MickeyUtils.AsynCall.AsynFunc))
+			{
+			    return new MickeyUtils.AsynCall.AsynFunc(SystemVoid);
+			}
+		
         
 		    throw new InvalidCastException("This delegate must add to CSharpCallLua: " + type);
 		}

@@ -13,5 +13,6 @@ public class UpdateUtils : MonoBehaviour
     private void Update()
     {
         MEvent.Dispatch();
+        AsynCall.CallFunc();
     }
 }

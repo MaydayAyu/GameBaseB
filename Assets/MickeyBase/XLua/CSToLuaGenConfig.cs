@@ -44,7 +44,9 @@ public static class ExampleGenConfig
                 typeof(WWW),
                 typeof(System.Collections.Generic.List<int>),
                 typeof(Action<string>),
-                typeof(UnityEngine.Debug)
+                typeof(UnityEngine.Debug),
+                typeof(MickeyUtils.MEvent),
+                typeof(MickeyUtils.AsynCall),
             };
 
     //C#静态调用Lua的配置（包括事件的原型），仅可以配delegate，interface
@@ -55,7 +57,9 @@ public static class ExampleGenConfig
                 typeof(Action<string>),
                 typeof(Action<double>),
                 typeof(UnityEngine.Events.UnityAction),
-                typeof(System.Collections.IEnumerator)
+                typeof(System.Collections.IEnumerator),
+                typeof(MickeyUtils.MEvent.EventFunc),
+                typeof(MickeyUtils.AsynCall.AsynFunc),
             };
 
     //黑名单

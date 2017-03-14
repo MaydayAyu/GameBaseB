@@ -75,6 +75,10 @@ namespace CSObjectWrap
 				
 				translator.DelayWrapLoader(typeof(UnityEngine.Debug), UnityEngineDebugWrap.__Register);
 				
+				translator.DelayWrapLoader(typeof(MickeyUtils.MEvent), MickeyUtilsMEventWrap.__Register);
+				
+				translator.DelayWrapLoader(typeof(MickeyUtils.AsynCall), MickeyUtilsAsynCallWrap.__Register);
+				
 				translator.DelayWrapLoader(typeof(LuaBehaviour), LuaBehaviourWrap.__Register);
 				
 				

@@ -237,32 +237,5 @@ namespace Tangzx.ABSystem
                 System.Console.WriteLine("Clear done..");
             }
         }
-
-        [MenuItem("ABSystem/Copy AssetBundles To HttpServer")]
-        private static void CopyToServer()
-        {
-            AssetBundlePathResolver abpr = new AssetBundlePathResolver();
-            string httpPath = "C:/inetpub/wwwroot/publish/";
-            string dest = httpPath + "data/AssetBundles";
-            if (Directory.Exists(abpr.BundleSavePath))
-            {
-                if (Directory.Exists(dest))
-                    Directory.Delete(dest, true);
-                Directory.Move(abpr.BundleSavePath, dest);
-                BuildAssetBundles();
-                ProcessStartInfo info = new ProcessStartInfo();
-                info.FileName = httpPath + "/VersionTools.exe";
-                info.Arguments = "";
-                info.WindowStyle = ProcessWindowStyle.Normal;
-                info.WorkingDirectory = httpPath;
-                Process pro = Process.Start(info);
-                pro.WaitForExit();
-            }
-            else
-            {
-                BuildAssetBundles();
-                CopyToServer();
-            }
-        }
     }
 }
